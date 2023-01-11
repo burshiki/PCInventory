@@ -35,12 +35,12 @@
             // 
             // toolStrip1
             // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(80, 80);
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(70, 70);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbUsers});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1067, 87);
+            this.toolStrip1.Size = new System.Drawing.Size(1067, 77);
             this.toolStrip1.Stretch = true;
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
@@ -51,7 +51,7 @@
             this.tsbUsers.Image = global::PCInventory.Properties.Resources.programmer;
             this.tsbUsers.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbUsers.Name = "tsbUsers";
-            this.tsbUsers.Size = new System.Drawing.Size(84, 84);
+            this.tsbUsers.Size = new System.Drawing.Size(74, 74);
             this.tsbUsers.Text = "toolStripButton1";
             this.tsbUsers.Click += new System.EventHandler(this.tsbUsers_Click);
             // 
@@ -59,7 +59,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 521);
+            this.ClientSize = new System.Drawing.Size(1067, 646);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

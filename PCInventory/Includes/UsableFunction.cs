@@ -8,5 +8,10 @@ namespace PCInventory.Includes
 {
     internal class UsableFunction
     {
+
+        public void ResponsiveDtg(DataGridView dvg)
+        {
+            dvg.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+        }
     }
 }
