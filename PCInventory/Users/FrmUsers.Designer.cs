@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvUsers = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.gbCreateUser = new System.Windows.Forms.GroupBox();
             this.btnCreate = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtConfirmPassword = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
@@ -50,14 +51,24 @@
             // 
             this.dgvUsers.AllowUserToAddRows = false;
             this.dgvUsers.AllowUserToDeleteRows = false;
-            this.dgvUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvUsers.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvUsers.Location = new System.Drawing.Point(12, 43);
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.ReadOnly = true;
             this.dgvUsers.RowTemplate.Height = 25;
+            this.dgvUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsers.Size = new System.Drawing.Size(537, 219);
             this.dgvUsers.TabIndex = 0;
+            this.dgvUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellContentClick);
             // 
             // txtSearch
             // 
@@ -70,13 +81,13 @@
             // 
             this.gbCreateUser.Controls.Add(this.btnCreate);
             this.gbCreateUser.Controls.Add(this.label5);
-            this.gbCreateUser.Controls.Add(this.textBox4);
+            this.gbCreateUser.Controls.Add(this.txtConfirmPassword);
             this.gbCreateUser.Controls.Add(this.label4);
-            this.gbCreateUser.Controls.Add(this.textBox3);
+            this.gbCreateUser.Controls.Add(this.txtPassword);
             this.gbCreateUser.Controls.Add(this.label3);
-            this.gbCreateUser.Controls.Add(this.textBox2);
+            this.gbCreateUser.Controls.Add(this.txtUsername);
             this.gbCreateUser.Controls.Add(this.label2);
-            this.gbCreateUser.Controls.Add(this.textBox1);
+            this.gbCreateUser.Controls.Add(this.txtName);
             this.gbCreateUser.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.gbCreateUser.Location = new System.Drawing.Point(12, 268);
             this.gbCreateUser.Name = "gbCreateUser";
@@ -105,13 +116,13 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Confirm Password";
             // 
-            // textBox4
+            // txtConfirmPassword
             // 
-            this.textBox4.Location = new System.Drawing.Point(110, 109);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(227, 23);
-            this.textBox4.TabIndex = 11;
-            this.textBox4.UseSystemPasswordChar = true;
+            this.txtConfirmPassword.Location = new System.Drawing.Point(110, 109);
+            this.txtConfirmPassword.Name = "txtConfirmPassword";
+            this.txtConfirmPassword.Size = new System.Drawing.Size(227, 23);
+            this.txtConfirmPassword.TabIndex = 11;
+            this.txtConfirmPassword.UseSystemPasswordChar = true;
             // 
             // label4
             // 
@@ -123,13 +134,13 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Password";
             // 
-            // textBox3
+            // txtPassword
             // 
-            this.textBox3.Location = new System.Drawing.Point(110, 80);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(227, 23);
-            this.textBox3.TabIndex = 9;
-            this.textBox3.UseSystemPasswordChar = true;
+            this.txtPassword.Location = new System.Drawing.Point(110, 80);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(227, 23);
+            this.txtPassword.TabIndex = 9;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // label3
             // 
@@ -141,12 +152,12 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Username";
             // 
-            // textBox2
+            // txtUsername
             // 
-            this.textBox2.Location = new System.Drawing.Point(110, 51);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(227, 23);
-            this.textBox2.TabIndex = 7;
+            this.txtUsername.Location = new System.Drawing.Point(110, 51);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(227, 23);
+            this.txtUsername.TabIndex = 7;
             // 
             // label2
             // 
@@ -158,12 +169,12 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Name";
             // 
-            // textBox1
+            // txtName
             // 
-            this.textBox1.Location = new System.Drawing.Point(110, 22);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(227, 23);
-            this.textBox1.TabIndex = 5;
+            this.txtName.Location = new System.Drawing.Point(110, 22);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(227, 23);
+            this.txtName.TabIndex = 5;
             // 
             // groupBox1
             // 
@@ -212,13 +223,13 @@
         private GroupBox gbCreateUser;
         private Button btnCreate;
         private Label label5;
-        private TextBox textBox4;
+        private TextBox txtConfirmPassword;
         private Label label4;
-        private TextBox textBox3;
+        private TextBox txtPassword;
         private Label label3;
-        private TextBox textBox2;
+        private TextBox txtUsername;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox txtName;
         private GroupBox groupBox1;
         private Label label1;
     }

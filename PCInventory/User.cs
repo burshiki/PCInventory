@@ -24,11 +24,19 @@ namespace PCInventory
         {
             List<User> users = new List<User>();
 
-            sql = "SELECT id AS ID, username AS Username, name AS Name, is_active AS 'is active?' FROM users";
+            sql = "SELECT id AS ID, username AS Username, name AS Name, CASE is_active WHEN 1 THEN 'active' ELSE 'inactive' END AS Status, created_at AS 'Date Created', updated_at AS 'Date Updated' FROM users";
             config.Load_DVG(sql, dtg);
 
             return users;
         }
+
+        public void Register_User(string username, string password, string name)
+        {
+            sql = "INSERT INTO users (username, password, name) VALUES ('" + username + "', sha('" + password + "'), '" + name + "')";
+            config.Execute_CUD(sql, "error to execute.", "User has been saved to database.");
+        }
+
+
 
     }
 }
