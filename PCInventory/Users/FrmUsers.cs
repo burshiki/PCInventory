@@ -31,8 +31,6 @@ namespace PCInventory.Users
             User user = new User(); 
             List<User> dt = user.get_all_user(dgvUsers);
 
-            dgvUsers.DataSource = dt;
-
             dgvUsers.Columns[0].Width = 30; //column size for ID
 
         }
