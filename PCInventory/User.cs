@@ -24,7 +24,9 @@ namespace PCInventory
         {
             List<User> users = new List<User>();
 
-            sql = "SELECT id AS ID, username AS Username, name AS Name, CASE is_active WHEN 1 THEN 'active' ELSE 'inactive' END AS Status, created_at AS 'Date Created', updated_at AS 'Date Updated' FROM users";
+            sql = "SELECT id AS ID, username AS Username, name AS Name, CASE is_active WHEN 1 THEN 'active' ELSE 'inactive' END AS Status, created_at AS 'Date Created', updated_at AS 'Date Updated' " +
+                "FROM users " +
+                "ORDER BY id DESC";
             config.Load_DVG(sql, dtg);
 
             return users;
