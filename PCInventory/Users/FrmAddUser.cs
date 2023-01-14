@@ -68,8 +68,6 @@ namespace PCInventory.Users
                     else
                     {
                         
-
-
                         user.Register_User(txtName.Text, txtUsername.Text, txtPassword.Text);
                         funct.clearTxt(gbCreateUser);
 
@@ -85,13 +83,24 @@ namespace PCInventory.Users
                             frm.FrmUsers_Load(sender, e);
                             frm.Show();
                         }
-                        
-
 
                     }
 
                 }
 
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to cancel Adding User?", "Question", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                funct.clearTxt(gbCreateUser);
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                return;
             }
         }
     }

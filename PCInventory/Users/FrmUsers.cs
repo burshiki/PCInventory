@@ -58,6 +58,10 @@ namespace PCInventory.Users
                 FrmUsers_Load(sender, e);
             }
 
+            else
+            {
+
+            }
 
         }
 

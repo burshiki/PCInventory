@@ -1,6 +1,6 @@
 ﻿namespace PCInventory.Users
 {
-    partial class FrmAddUser
+    partial class FrmUpdateUser
     {
         /// <summary>
         /// Required designer variable.
@@ -58,7 +58,7 @@
             this.gbCreateUser.Location = new System.Drawing.Point(12, 12);
             this.gbCreateUser.Name = "gbCreateUser";
             this.gbCreateUser.Size = new System.Drawing.Size(367, 211);
-            this.gbCreateUser.TabIndex = 3;
+            this.gbCreateUser.TabIndex = 4;
             this.gbCreateUser.TabStop = false;
             this.gbCreateUser.Text = "Create User";
             // 
@@ -70,7 +70,6 @@
             this.btnCancel.TabIndex = 14;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnCreate
             // 
@@ -80,7 +79,6 @@
             this.btnCreate.TabIndex = 13;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = true;
-            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // label5
             // 
@@ -152,15 +150,14 @@
             this.txtName.Size = new System.Drawing.Size(227, 23);
             this.txtName.TabIndex = 5;
             // 
-            // FrmAddUser
+            // FrmUpdateUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(391, 235);
             this.Controls.Add(this.gbCreateUser);
-            this.Name = "FrmAddUser";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Add User";
+            this.Name = "FrmUpdateUser";
+            this.Text = "FrmUpdateUser";
             this.gbCreateUser.ResumeLayout(false);
             this.gbCreateUser.PerformLayout();
             this.ResumeLayout(false);
