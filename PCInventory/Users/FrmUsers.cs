@@ -11,21 +11,22 @@ using PCInventory.Includes;
 
 
 
+
 namespace PCInventory.Users
 {
     public partial class FrmUsers : Form
     {
 
-        MySQLConfig config = new MySQLConfig();
-        UsableFunction funct = new UsableFunction();
-        string sql;
+        
+        
+ 
 
         public FrmUsers()
         {
             InitializeComponent();
         }
 
-        private void FrmUsers_Load(object sender, EventArgs e)
+        public void FrmUsers_Load(object sender, EventArgs e)
         {
 
             User user = new User(); 
@@ -37,50 +38,7 @@ namespace PCInventory.Users
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            User user = new User();
-
-            if(txtName.Text == "")
-            {
-                MessageBox.Show("Please enter your name", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtName.Focus();
-            }
-            else if(txtUsername.Text == "")
-            {
-                MessageBox.Show("Please enter your username", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtUsername.Focus();
-            }
-            else if (txtPassword.Text == "" || txtConfirmPassword.Text == "")
-            {
-                MessageBox.Show("Please enter your password", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtPassword.Focus();
-            }
-            else
-            {
-
-                if(txtPassword.Text != txtConfirmPassword.Text)
-                {
-                    MessageBox.Show("Password and Confirm password do not match!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtConfirmPassword.Focus();
-                }
-                else
-                {
-
-                    sql = "SELECT * FROM users WHERE username = '" + txtUsername.Text + "'";
-                    config.singleResult(sql);
-                    if (config.dt.Rows.Count > 0)
-                    {
-                        MessageBox.Show("Username is already exists!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        txtUsername.Focus();
-                    }
-                    else
-                    {
-                        user.Register_User(txtName.Text, txtUsername.Text, txtPassword.Text);
-                        FrmUsers_Load(sender,e);
-                    }
-                   
-                }
-                
-            }
+            
 
             
         }
@@ -100,6 +58,13 @@ namespace PCInventory.Users
                 FrmUsers_Load(sender, e);
             }
 
+
+        }
+
+        private void btnCreateUser_Click(object sender, EventArgs e)
+        {
+            FrmAddUser frm_add_user = new FrmAddUser();
+            frm_add_user.Show();
 
         }
     }
