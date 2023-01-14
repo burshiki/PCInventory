@@ -82,7 +82,6 @@ namespace PCInventory
                 da.Fill(dt);
                 dtg.DataSource = dt;
 
-
             }
             catch (Exception ex)
             {

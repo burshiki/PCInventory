@@ -18,15 +18,22 @@ namespace PCInventory
         public string username { get; set; }
         public string password { get; set; }
         public string name { get; set; }
-        public string is_active { get; set; }
+        public int is_active { get; set; }
+
+        public int id { get; set; }
 
         public List<User> get_all_user(DataGridView dtg) 
         {
             List<User> users = new List<User>();
 
-            sql = "SELECT id AS ID, username AS Username, name AS Name, CASE is_active WHEN 1 THEN 'active' ELSE 'inactive' END AS Status, created_at AS 'Date Created', updated_at AS 'Date Updated' " +
-                "FROM users " +
-                "ORDER BY id DESC";
+            //sql = "SELECT id, username, name, CASE is_active WHEN 1 THEN 'active' ELSE 'inactive' END as 'is active?', created_at, updated_at " +
+            //"FROM users " +
+            //"ORDER BY id DESC";
+            sql = "SELECT id, name, username, is_active, created_at, updated_at " +
+            "FROM users " +
+            "ORDER BY id DESC";
+
+            //sql = "SELECT * FROM users ORDER BY id DESC";
             config.Load_DVG(sql, dtg);
 
             return users;
@@ -38,6 +45,17 @@ namespace PCInventory
             config.Execute_CUD(sql, "error to execute.", "User has been saved to database.");
         }
 
+        public void Update_User(string username, string password, string name, int id)
+        {
+            sql = "UPDATE users SET name = '" + name + "', '" + username + "', '" + password + "' WHERE id = '" + id + "'";
+            config.Execute_CUD(sql, "error tot execute.", "User has been updated.");
+        }
+
+        public void Update_User_Active(int is_active, int id)
+        {
+            sql = "UPDATE users SET is_active = '" + is_active + "' WHERE id = '" + id + "'";
+            config.Execute_CUD(sql, "error tot execute.", "User has change to inactive.");
+        }
 
 
     }

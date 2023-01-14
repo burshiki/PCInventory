@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvUsers = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.gbCreateUser = new System.Windows.Forms.GroupBox();
@@ -43,6 +43,14 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.IDColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UsernameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActiveColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CreatedAtColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UpdatedAtColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UpdateColumn = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.DeleteColumn = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.gbCreateUser.SuspendLayout();
             this.SuspendLayout();
@@ -52,29 +60,39 @@
             this.dgvUsers.AllowUserToAddRows = false;
             this.dgvUsers.AllowUserToDeleteRows = false;
             this.dgvUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvUsers.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvUsers.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDColumn,
+            this.NameColumn,
+            this.UsernameColumn,
+            this.ActiveColumn,
+            this.CreatedAtColumn,
+            this.UpdatedAtColumn,
+            this.UpdateColumn,
+            this.DeleteColumn});
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvUsers.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvUsers.Location = new System.Drawing.Point(12, 43);
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.ReadOnly = true;
             this.dgvUsers.RowTemplate.Height = 25;
             this.dgvUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsers.Size = new System.Drawing.Size(537, 219);
+            this.dgvUsers.Size = new System.Drawing.Size(604, 219);
             this.dgvUsers.TabIndex = 0;
-            this.dgvUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellContentClick);
+            this.dgvUsers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellClick);
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(416, 11);
+            this.txtSearch.Location = new System.Drawing.Point(417, 11);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(133, 23);
+            this.txtSearch.Size = new System.Drawing.Size(199, 23);
             this.txtSearch.TabIndex = 1;
             // 
             // gbCreateUser
@@ -194,11 +212,76 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Search";
             // 
+            // IDColumn
+            // 
+            this.IDColumn.DataPropertyName = "id";
+            this.IDColumn.HeaderText = "ID";
+            this.IDColumn.Name = "IDColumn";
+            this.IDColumn.ReadOnly = true;
+            this.IDColumn.Width = 43;
+            // 
+            // NameColumn
+            // 
+            this.NameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NameColumn.DataPropertyName = "name";
+            this.NameColumn.HeaderText = "Name";
+            this.NameColumn.Name = "NameColumn";
+            this.NameColumn.ReadOnly = true;
+            // 
+            // UsernameColumn
+            // 
+            this.UsernameColumn.DataPropertyName = "username";
+            this.UsernameColumn.HeaderText = "Username";
+            this.UsernameColumn.Name = "UsernameColumn";
+            this.UsernameColumn.ReadOnly = true;
+            this.UsernameColumn.Width = 85;
+            // 
+            // ActiveColumn
+            // 
+            this.ActiveColumn.DataPropertyName = "is_active";
+            this.ActiveColumn.HeaderText = "Active?";
+            this.ActiveColumn.Name = "ActiveColumn";
+            this.ActiveColumn.ReadOnly = true;
+            this.ActiveColumn.Width = 70;
+            // 
+            // CreatedAtColumn
+            // 
+            this.CreatedAtColumn.DataPropertyName = "created_at";
+            this.CreatedAtColumn.HeaderText = "Date Created";
+            this.CreatedAtColumn.Name = "CreatedAtColumn";
+            this.CreatedAtColumn.ReadOnly = true;
+            // 
+            // UpdatedAtColumn
+            // 
+            this.UpdatedAtColumn.DataPropertyName = "updated_at";
+            this.UpdatedAtColumn.HeaderText = "Last Update";
+            this.UpdatedAtColumn.Name = "UpdatedAtColumn";
+            this.UpdatedAtColumn.ReadOnly = true;
+            this.UpdatedAtColumn.Width = 94;
+            // 
+            // UpdateColumn
+            // 
+            this.UpdateColumn.HeaderText = "Update";
+            this.UpdateColumn.Name = "UpdateColumn";
+            this.UpdateColumn.ReadOnly = true;
+            this.UpdateColumn.Text = "Update";
+            this.UpdateColumn.UseColumnTextForButtonValue = true;
+            this.UpdateColumn.Width = 51;
+            // 
+            // DeleteColumn
+            // 
+            this.DeleteColumn.HeaderText = "Delete";
+            this.DeleteColumn.Name = "DeleteColumn";
+            this.DeleteColumn.ReadOnly = true;
+            this.DeleteColumn.Text = "Delete";
+            this.DeleteColumn.UseColumnTextForButtonValue = true;
+            this.DeleteColumn.Width = 46;
+            // 
             // FrmUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(561, 471);
+            this.ClientSize = new System.Drawing.Size(628, 471);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbCreateUser);
@@ -232,5 +315,13 @@
         private TextBox txtName;
         private GroupBox groupBox1;
         private Label label1;
+        private DataGridViewTextBoxColumn IDColumn;
+        private DataGridViewTextBoxColumn NameColumn;
+        private DataGridViewTextBoxColumn UsernameColumn;
+        private DataGridViewTextBoxColumn ActiveColumn;
+        private DataGridViewTextBoxColumn CreatedAtColumn;
+        private DataGridViewTextBoxColumn UpdatedAtColumn;
+        private DataGridViewButtonColumn UpdateColumn;
+        private DataGridViewButtonColumn DeleteColumn;
     }
 }

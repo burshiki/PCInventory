@@ -85,8 +85,21 @@ namespace PCInventory.Users
             
         }
 
-        private void dgvUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvUsers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
+            User user = new User();
+
+            if (dgvUsers.Columns[e.ColumnIndex].HeaderText == "Delete")
+            {
+                int id;
+                id = Convert.ToInt32(dgvUsers.Rows[e.RowIndex].Cells["IDColumn"].Value);
+                //MessageBox.Show(id.ToString());
+
+                user.Update_User_Active(0, id);
+                FrmUsers_Load(sender, e);
+            }
+
 
         }
     }
